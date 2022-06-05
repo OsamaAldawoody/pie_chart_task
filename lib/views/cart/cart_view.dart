@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pie_chart_task/models/cart.dart';
+import 'package:pie_chart_task/provider/cart_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'empty_cart.dart';
@@ -9,7 +9,7 @@ class CartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cart = context.watch<Cart>();
+    final cart = context.watch<CartProvider>();
     debugPrint(cart.itemsMap.toString());
     return Scaffold(
       appBar: AppBar(
@@ -31,7 +31,7 @@ class CartView extends StatelessWidget {
                             Text(cart.itemsMap[item.key].toString()),
                             IconButton(
                                 onPressed: () => cart.removeDrink(item.key),
-                                icon: const Icon(Icons.minimize_rounded)),
+                                icon: const Icon(Icons.remove)),
                           ],
                         ),
                       ))

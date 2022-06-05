@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class Cart with ChangeNotifier {
+class CartProvider with ChangeNotifier {
   Map<String, int> itemsMap = {};
 
   void addDrink(String drink) {

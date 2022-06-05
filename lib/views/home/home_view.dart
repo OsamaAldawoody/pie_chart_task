@@ -1,8 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:pie_chart/pie_chart.dart';
-import 'package:pie_chart_task/models/cart.dart';
+import 'package:pie_chart_task/provider/cart_provider.dart';
 import 'package:pie_chart_task/provider/home_provider.dart';
 import 'package:pie_chart_task/routes.dart';
 import 'package:pie_chart_task/views/global_snack_bar.dart';
@@ -19,7 +16,7 @@ class HomeView extends StatelessWidget {
         create: (context) => HomeProvider(),
         builder: (context, child) {
           final home = context.read<HomeProvider>();
-          final cart = context.read<Cart>();
+          final cart = context.read<CartProvider>();
           return Scaffold(
             appBar: AppBar(
               title: const Text('Margrita'),
