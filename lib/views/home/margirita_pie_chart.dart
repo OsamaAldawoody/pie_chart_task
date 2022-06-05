@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
 
-import '../provider/home_provider.dart';
+import '../../provider/home_provider.dart';
 
 class MargritaPieChart extends StatelessWidget {
   const MargritaPieChart({

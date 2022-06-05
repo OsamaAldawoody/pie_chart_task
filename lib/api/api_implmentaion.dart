@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:pie_chart_task/api/_api.dart';
@@ -14,9 +16,11 @@ class DrinkImplementation implements DrinkAbstract {
       final response = await dio.get('/json/v1/1/search.php?s=margarita');
       drinks = Drink.drinksFromJson(response.data['drinks']);
       return drinks;
-    } catch (e) {
+    } on SocketException {
+      throw 'Connection error';
+    } catch (e, s) {
       debugPrint(e.toString());
-      throw 'error';
+      rethrow;
     }
   }
 }
